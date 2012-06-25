@@ -1,0 +1,14 @@
+<snippet>
+	<content>
+<![CDATA[
+<a class="ui-btn $1" id="$2" href="$3" name="$4" tabindex="$5" title="$6">
+	<span class="$7">
+		<span class="ui-btn-icn ui-btn-icn-$8 ui-icn-sprite"></span>$6
+	</span>
+</a>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>buttonlink</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

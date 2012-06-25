@@ -1,0 +1,26 @@
+<snippet>
+	<content>
+<![CDATA[
+<div class="ui-btn-grp-vert">
+	<a class="ui-btn $1" id="$2" href="$3" name="$4" tabindex="$5" title="$6">
+		<span class="$7">
+			<span class="ui-btn-icn ui-btn-icn-$8 ui-icn-sprite"></span>$6
+		</span>
+	</a>
+	<a class="ui-btn $9" id="$10" href="$11" name="$12" tabindex="$13" title="$14">
+		<span class="$15">
+			<span class="ui-btn-icn ui-btn-icn-$16 ui-icn-sprite"></span>$14
+		</span>
+	</a>
+	<a class="ui-btn $17" id="$18" href="$19" name="$20" tabindex="$21" title="$22">
+		<span class="$23">
+			<span class="ui-btn-icn ui-btn-icn-$24 ui-icn-sprite"></span>$22
+		</span>
+	</a>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>buttongrpvert</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>
