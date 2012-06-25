@@ -1,0 +1,13 @@
+<snippet>
+	<content>
+<![CDATA[
+<li>
+	<label for="$1">$2</label>
+	<input class="$3" id="$4" name="$5" value="$6" tabindex="$7" type="$8" title="$2" />
+</li>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>formrow</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

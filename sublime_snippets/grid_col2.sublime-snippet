@@ -1,0 +1,16 @@
+<snippet>
+	<content>
+<![CDATA[
+<$1 class="col-$2">
+	$4
+</$1>
+<$1 class="col-$3 last">
+	$5
+</$1>
+$6
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>col2</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

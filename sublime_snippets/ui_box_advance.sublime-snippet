@@ -1,0 +1,19 @@
+<snippet>
+	<content>
+<![CDATA[
+<$1 class="ui-box $2">
+	<$3 class="box-hdr">
+		<h6>$4</h6>
+	</$3>
+	<$5 class="box-bdy">
+		$6
+	</$5>
+	<$7 class="box-ftr"></$7>
+</$1>
+$8
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>uiboxadv</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>
