@@ -1,0 +1,180 @@
+/*------------------------------------------------------------------------------------------
+CORE v3.5 - Type Partial
+DATE - May 21, 2012
+AUTHOR - Doug Fraize & Matthew Holmes
+------------------------------------------------------------------------------------------ */
+
+//=== SASS VARS =============================================================================
+
+//--- SIZE VARS -----------------------------------------------------------------------------
+$context-size:15; // 15px
+$line-height:22; // 22px
+
+//--- SIZE FUNCTION -------------------------------------------------------------------------
+
+// $target-size = size you want in pixels
+// $context-size = base size in pixels
+// $target-size/$context-size = size in ems
+
+@function size($target-size) {
+	@return $target-size/$context-size;
+}
+
+// Remember to change the font-size on the body tag to correspond to the context, for example:
+// if the context size is 10 (10px) you need to change the body font-size to .625em or 62.5%.
+// 62.5% on the body is 62.5% of 16px which is the base font size for most browsers,
+// giving you a base of 10px
+
+body						{
+							color:#494949;
+							@include arial-font-stack;
+							font-size:.9375em; // 15px
+							}
+
+/*----- HEADERS ------------------------------------------------------------------------*/
+h1, .h1, h2, .h2, h3, .h3	{
+							@include myriad-font-stack;
+							}
+h4, .h4, h5, .h5			{
+							@include arial-font-stack;
+							}
+
+h1, .h1, h2, .h2,
+h3, .h3, h4, .h4,
+h5, .h5						{
+							font-weight:700;
+							margin-bottom:#{size(8)}em;
+							color:#000;
+							}
+
+h1, .h1						{
+							font-size:#{size(30)}em;
+							}
+h2, .h2						{
+							font-size:#{size(23)}em;
+							}
+h3, .h3						{
+							font-size:#{size(19)}em;
+							}
+h4, .h4						{
+							font-size:#{size(16)}em;
+							}
+h5, .h5						{
+							font-size:#{size(14)}em;
+							}
+
+b, strong, th, thead,
+dt, legend					{
+							font-weight:bold;
+							}
+
+/*----- PARAGRAPH ---------------------------------------------------------------------*/
+p							{
+							line-height:#{size($line-height)}em;
+							margin:0 0 #{size(15)}em 0;
+							}
+							
+/*----- FOOTNOTES ---------------------------------------------------------------------*/
+small						{
+							font-size:#{size(10)}em;
+							}				
+p small						{
+							display:block;
+							line-height:#{size($line-height)}em;
+							}
+
+/*----- LIST ITEMS --------------------------------------------------------------------*/
+ul							{
+							list-style:disc outside;
+							margin-left:#{size(17)}em;
+							}
+
+ol							{
+							list-style:decimal outside;
+							margin-left:#{size(20.5)}em;
+							}
+
+ul, ol, dl, dialog			{
+							margin-bottom:#{size(15)}em;
+							}
+
+ul li, ol li, dl dd			{
+							line-height:#{size($line-height)}em;
+							margin-top:0;
+							}
+							
+ol ol, ul ul, ol ul, ul ol	{
+							margin-top:#{size(8)}em;
+							}
+
+dt							{
+							color:#000;
+							}
+							
+.lower-alpha				{
+							list-style-type:lower-alpha;
+							}
+							
+.upper-alpha				{
+							list-style-type:upper-alpha;
+							}
+							
+.lower-roman				{
+							list-style-type:lower-roman;
+							}
+							
+.upper-roman				{
+							list-style-type:upper-roman;
+							}
+							
+.list-style-none			{
+							list-style-type:none;
+							}
+
+/*----- BLOCKQUOTE ------------------------------------------------------------------*/
+blockquote					{
+							padding:#{size(6.5)}em #{size(19.5)}em #{size(19.5)}em #{size(19.5)}em;
+							}
+blockquote p				{
+							margin:0;
+							line-height:#{size($line-height)}em;
+							font-style:italic;
+							}
+
+/*----- TABLE -----------------------------------------------------------------------*/
+table						{
+							font:inherit;
+							}
+
+/*----- LINKS ----------------------------------------------------------------------*/
+a							{
+							
+	&:link						{
+								@include href-link(#01417E,underline);
+								cursor:pointer;
+								}
+	&:visited					{
+								color:#666;
+								}
+	&:hover,
+	&:focus,
+	&:active					{
+								@include href-link-hover(none);
+								}
+							
+							}
+
+/*----- OTHER ELEMENTS -----------------------------------------------------------------------*/
+abbr						{
+							cursor:help;
+							border-bottom:1px dotted #000;
+							}
+sup, sub					{
+							font-size:#{size(10)}em;
+							}
+sup							{
+							vertical-align:#{size(5)}em;
+							}
+sub							{
+							vertical-align:#{size(-4)}em;
+							}

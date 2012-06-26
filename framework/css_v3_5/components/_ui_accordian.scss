@@ -1,0 +1,44 @@
+/*------------------------------------------------------------------------------------------
+UI accordion CSS
+DATE - May 21, 2012
+AUTHOR - Doug Fraize & Matthew Holmes
+------------------------------------------------------------------------------------------ */
+
+//=== SASS VARS =============================================================================
+
+//--- SIZE VARS -----------------------------------------------------------------------------
+$context-size:15; // 15px
+
+//--- SIZE FUNCTION -------------------------------------------------------------------------
+
+// $target-size = size you want in pixels
+// $context-size = base size in pixels
+// $target-size/$context-size = size in ems
+
+@function size($target-size) {
+	@return $target-size/$context-size;
+}
+
+.ui-accordion										{
+													margin-bottom:#{size(15)}em;
+	h3													{
+														font-size:#{size(14)}em;
+		a													{
+															@include border-radius(#{size(6)}em, all);
+															@include background-gradient(#efefef, #cccccd);
+															border:1px solid #CCC;
+															color:#333;
+															text-shadow:1px 1px 1px #FFF;
+															display:block;
+															padding:#{size(4)}em #{size(8)}em;
+															text-decoration:none;
+			&:hover												{
+																@include background-gradient(#efefef, #999998);
+																}
+															}
+														}
+	.ui-accordion-content								{
+														box-sizing:content-box;
+														padding:#{size(8)}em #{size(15)}em;
+														}
+													}

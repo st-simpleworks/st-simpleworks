@@ -1,0 +1,27 @@
+/*------------------------------------------------------------------------------------------
+CORE v3.5 - Base Import Partial
+DATE - May 21, 2012
+AUTHOR - Doug Fraize & Matthew Holmes
+------------------------------------------------------------------------------------------ */
+
+//=== SASS IMPORTS ==========================================================================
+// NOTE: Make sure mixins are called before partials since partials require mixins
+
+@import	"../mixins/background_gradient",
+		"../mixins/border_radius",
+		"../mixins/box_shadow",
+		"../mixins/fonts",
+		"../mixins/href",
+		"../mixins/clearfix",
+		"reset",
+		"type",
+		"grid",
+		"form",
+		"page",
+		"ui_box",
+		"ui_btn",
+		"ie",
+		"responsive"
+		;
+
+

@@ -1,0 +1,8 @@
+@mixin href-link($main-font-color:#FF0000, $text-deco:underline) {
+	color:$main-font-color;
+	text-decoration:$text-deco;
+}
+
+@mixin href-link-hover($hove-text-deco:none) {
+	text-decoration:$hove-text-deco;
+}
