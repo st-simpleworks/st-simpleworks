@@ -1,6 +1,0 @@
-@mixin box-shadow($h-shadow, $v-shadow, $blur, $color) {
-	-moz-box-shadow:$h-shadow $v-shadow $blur $color;
-	-webkit-box-shadow:$h-shadow $v-shadow $blur $color;
-	-o-box-shadow:$h-shadow $v-shadow $blur $color;
-	box-shadow:$h-shadow $v-shadow $blur $color;
-}
