@@ -1,0 +1,75 @@
+/*------------------------------------------------------------------------------------------
+SASS Boilerplate - Theme CSS
+DATE - May 21, 2012
+AUTHOR - Doug Fraize & Matthew Holmes
+------------------------------------------------------------------------------------------ */
+
+//=== SASS IMPORTS ==========================================================================
+@import	"../../core_v3_5/mixins/background_gradient",
+		"../../core_v3_5/mixins/border_radius",
+		"../../core_v3_5/mixins/box_shadow",
+		"../../core_v3_5/mixins/fonts",
+		"../../core_v3_5/mixins/href",
+		"../../core_v3_5/mixins/clearfix"
+		;
+
+//=== SASS VARS =============================================================================
+
+//--- SIZE VARS -----------------------------------------------------------------------------
+$context-size:15; // 15px
+
+//--- SIZE FUNCTION -------------------------------------------------------------------------
+
+// $target-size = size you want in pixels
+// $context-size = base size in pixels
+// $target-size/$context-size = size in ems
+
+@function size($target-size) {
+	@return $target-size/$context-size;
+}
+
+//--- SPRITE VARS ---------------------------------------------------------------------------
+/* Uncomment code below and insert website name where it indicates [website] below */
+/* $website-sprite:\#{url(/images/[website]/icon_sprite24.png)}; */
+
+
+/*=== WEBSITE STYLES ======================================================================*/
+
+
+
+//=== MEDIA QUERIES =========================================================================
+
+/*--- Portrait iPhone, landscape iPhone, portrait smart phones ----------------------------*/
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+
+}
+
+/*--- Portrait e-readers (Nook/Kindle/Kindle Fire) ----------------------------------------*/
+@media only screen and (min-width : 481px) and (max-width : 640px) {
+
+}
+
+/*--- Portrait iPad, portrait tablets -----------------------------------------------------*/
+@media only screen and (min-width : 641px) and (max-width : 768px) {
+
+}
+
+/*--- Low-resolution laptops and desktops -------------------------------------------------*/
+@media only screen and (min-width : 769px) and (max-width : 980px) {
+
+}
+
+/*--- Landscape iPad, laptops and desktops beyond 980px -----------------------------------*/
+@media only screen and (min-width : 981px) and (max-width : 1024px) {
+
+}
+
+/*--- Big landscape tablets, laptops and desktops beyond 980px ----------------------------*/
+@media only screen and (min-width : 1025px) and (max-width : 1280px) {
+
+}
+
+/*--- Hi-res laptops and desktops ---------------------------------------------------------*/
+@media only screen and (min-width : 1281px) {
+	
+}

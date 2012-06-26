@@ -1,0 +1,9 @@
+@mixin background-gradient($startColor, $endColor) {
+	background-color:$startColor;
+	background-image:-moz-linear-gradient(top, $startColor, $endColor); /* FF3.6 */
+	background-image:-o-linear-gradient(top, $startColor, $endColor); /* Opera 11.10+ */
+	background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, $startColor),color-stop(1, $endColor)); /* Saf4+, Chrome */
+	background-image:-webkit-linear-gradient($startColor, $endColor); /* Chrome 10+, Saf5.1+ */
+	background-image:linear-gradient(top, $startColor, $endColor);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', EndColorStr='#{$endColor}'); /* IE6 - IE9 */
+}

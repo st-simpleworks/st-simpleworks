@@ -1,0 +1,341 @@
+/*------------------------------------------------------------------------------------------
+CORE v3.5 - IE Partial
+DATE - May 21, 2012
+AUTHOR - Doug Fraize & Matthew Holmes
+------------------------------------------------------------------------------------------ */
+
+//=== SASS VARS =============================================================================
+
+//--- SIZE VARS -----------------------------------------------------------------------------
+$context-size:15; // 15px
+
+//--- SIZE FUNCTION -------------------------------------------------------------------------
+
+// $target-size = size you want in pixels
+// $context-size = base size in pixels
+// $target-size/$context-size = size in ems
+
+@function size($target-size) {
+	@return $target-size/$context-size;
+}
+
+/*=========================================================================================== 
+IE8 FIXES 
+===========================================================================================*/
+
+.ie8						{
+
+
+/*=== _RESET.SCSS =========================================================================*/
+
+
+/*=== _TYPE.SCSS ==========================================================================*/
+
+
+/*=== _GRID.SCSS ==========================================================================*/
+
+
+/*=== _FORM.SCSS ==========================================================================*/
+
+/*--- GLOBAL SETUP OF ELEMENTS -------------------------------------------------------------*/
+	select						{
+								max-width:#{size(300)}em;
+								}
+
+/*--- UI FORM ------------------------------------------------------------------------------*/
+	.ui-form					{
+
+		// RADIO AND CHECKBOX STYLES
+
+		.chx-radio					{
+			input 						{
+										vertical-align:#{size(-2)}em;
+				&:hover						{
+											border:0;
+											}
+										}
+									}
+
+		.checkbox					{
+			input 						{
+										vertical-align:#{size(-2)}em;
+										}
+									}
+
+		// DEFAULT LAYOUT FOR OPT IN EMAIL
+
+		.email-opt-in				{
+			.email						{
+				&:hover						{
+											border:2px solid #c4c4b4;
+											}
+										}
+			.email-optin-label			{
+										margin-top:0;
+										line-height:#{size(10)}em;
+				input						{
+											background-color:transparent;
+											margin:0;
+											width:#{size(20)}em;
+											margin-left:-1px;
+											}
+										}
+									}
+
+		// DEFAULT ADDRESS FIELDSET LAYOUT
+
+		.city-zip-lyt				{
+			.state-label				{
+				select 						{
+											padding:#{size(1)}em 0 #{size(2)}em 0;
+											}
+										}
+									}
+								}
+
+/*=== _PAGE.SCSS ==========================================================================*/
+
+
+/*=== _UI_BOX.SCSS ========================================================================*/
+
+
+/*=== _UI_BTN.SCSS ========================================================================*/
+
+	.ui-btn						{
+		.ui-btn-ctn					{
+			/* IE8+9 requires a forced filter for the active state on link type buttons, this hack will need to be used in ie stylesheet for website and gradient colors will need to be overridden */
+			&:active					{
+										filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#bbbaba', EndColorStr='#efefef');
+										}
+									}
+		.orange						{
+			/* IE8+9 requires a forced filter for the active state on link type buttons, this hack will need to be used in ie stylesheet for website and gradient colors will need to be overridden */
+			&:active					{
+										filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#cf7500', EndColorStr='#ffae00');
+										}
+									}
+		.green						{
+			/* IE8+9 requires a forced filter for the active state on link type buttons, this hack will need to be used in ie stylesheet for website and gradient colors will need to be overridden */
+			&:active					{
+										filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#7ea630', EndColorStr='#a0de22');
+										}
+									}
+		.blue						{
+			/* IE8+9 requires a forced filter for the active state on link type buttons, this hack will need to be used in ie stylesheet for website and gradient colors will need to be overridden */
+			&:active					{
+										filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#0374ac', EndColorStr='#00a8ff');
+										}
+									}
+								}
+
+/*=== _UI_AUTOCOMPLETE.SCSS ===============================================================*/
+
+
+/*=== _UI_DATEPICKER.SCSS =================================================================*/
+
+
+/*=== _UI_OVERLAY.SCSS ====================================================================*/
+
+
+/*=== _UI_TOOLTIP.SCSS ====================================================================*/
+
+							}
+
+
+/*=========================================================================================== 
+IE9 FIXES 
+===========================================================================================*/
+
+.ie9						{
+
+
+/*=== _RESET.SCSS =========================================================================*/
+
+
+/*=== _TYPE.SCSS ==========================================================================*/
+
+
+/*=== _GRID.SCSS ==========================================================================*/
+
+
+/*=== _FORM.SCSS ==========================================================================*/
+
+/*--- GLOBAL SETUP OF ELEMENTS -------------------------------------------------------------*/
+	select						{
+								max-width:#{size(300)}em;
+								}
+
+/*--- UI FORM ------------------------------------------------------------------------------*/
+	.ui-form					{
+
+		// RADIO AND CHECKBOX STYLES
+
+		.chx-radio					{
+			input 						{
+										vertical-align:#{size(-2)}em;
+				&:hover						{
+											border:0;
+											}
+										}
+									}
+
+		.checkbox					{
+			input 						{
+										vertical-align:#{size(-2)}em;
+										}
+									}
+
+		// DEFAULT LAYOUT FOR OPT IN EMAIL
+
+		.email-opt-in				{
+			.email						{
+				&:hover						{
+											border:2px solid #c4c4b4;
+											}
+										}
+			.email-optin-label			{
+										margin-top:0;
+										line-height:#{size(10)}em;
+				input						{
+											background-color:transparent;
+											margin:0;
+											width:#{size(20)}em;
+											margin-left:-1px;
+											}
+										}
+									}
+
+		// DEFAULT ADDRESS FIELDSET LAYOUT
+
+		.city-zip-lyt				{
+			.state-label				{
+				select 						{
+											padding:#{size(1)}em 0 #{size(2)}em 0;
+											}
+										}
+									}
+								}
+
+/*--- ERROR, NOTICE, INFO & SUCCESS CONTAINERS ---------------------------------------------*/
+.error-ctn, .alert-ctn,
+.notice-ctn,
+.success-ctn,
+.info-ctn						{
+								border-radius:0;
+								}
+
+/*=== _PAGE.SCSS ==========================================================================*/
+
+
+/*=== _UI_BOX.SCSS ========================================================================*/
+	.ui-box-rnd,
+	.ui-box-rnd-adv,
+	.ui-box-rnd-shadow,
+	.ui-box-rnd-shadow-adv		{
+								border-radius:0;
+		.box-hdr					{
+									border-radius:0;
+									}
+								}
+
+/*=== _UI_BTN.SCSS ========================================================================*/
+
+	.ui-btn						{
+
+		/* Fix IE9 bug when border-radius is used with IE filter */
+		.ui-btn-ctn					{
+									border-radius:0;
+
+			/* IE8+9 requires a forced filter for the active state on link type buttons, this hack will need to be used in ie stylesheet for website and gradient colors will need to be overridden */
+			&:active					{
+										filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#bbbaba', EndColorStr='#efefef');
+										}
+									}
+		.orange						{
+			/* IE8+9 requires a forced filter for the active state on link type buttons, this hack will need to be used in ie stylesheet for website and gradient colors will need to be overridden */
+			&:active					{
+										filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#cf7500', EndColorStr='#ffae00');
+										}
+									}
+		.green						{
+			/* IE8+9 requires a forced filter for the active state on link type buttons, this hack will need to be used in ie stylesheet for website and gradient colors will need to be overridden */
+			&:active					{
+										filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#7ea630', EndColorStr='#a0de22');
+										}
+									}
+		.blue						{
+			/* IE8+9 requires a forced filter for the active state on link type buttons, this hack will need to be used in ie stylesheet for website and gradient colors will need to be overridden */
+			&:active					{
+										filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#0374ac', EndColorStr='#00a8ff');
+										}
+									}
+								}
+	.ui-btn-grp-vert			{
+		.ui-btn:first-child			{
+			.ui-btn-ctn	 				{
+										border-radius:0;
+										}
+									}
+		.ui-btn:last-child			{
+			.ui-btn-ctn	 				{
+										border-radius:0;
+										}
+									}
+								}
+								
+	.ui-btn-grp-horz			{
+		.ui-btn:first-child			{
+			.ui-btn-ctn	 				{
+										border-radius:0;
+										}
+									}
+		.ui-btn:last-child			{
+			.ui-btn-ctn	 				{
+										border-radius:0;
+										}
+									}
+								}
+
+/*=== _UI_AUCCORDIAN.SCSS ===============================================================*/
+.ui-accordion					{
+	h3								{
+		a								{
+										border-radius:0 !important;
+										}
+									}
+								}
+
+/*=== _UI_AUTOCOMPLETE.SCSS ===============================================================*/
+	.ui-menu					{
+								border-radius:0 !important;
+								}
+
+
+/*=== _UI_DATEPICKER.SCSS =================================================================*/
+	.ui-datepicker				{
+								border-radius:0 !important;
+								}
+
+/*=== _UI_OVERLAY.SCSS ====================================================================*/
+	.ui-dialog					{
+								border-radius:0 !important;
+								}
+	.ui-dialog-titlebar			{
+								border-radius:0 !important;
+								}
+
+/*=== _UI_TABS.SCSS ====================================================================*/
+	.ui-tabs					{
+		.ui-tabs-nav				{
+			.ui-state-default			{
+										border-radius:0 !important;
+										}
+									}
+								}
+
+/*=== _UI_TOOLTIP.SCSS ====================================================================*/
+	.ui-tooltip-ctn				{
+								border-radius:0 !important;
+								}
+
+							}

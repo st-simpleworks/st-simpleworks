@@ -1,0 +1,242 @@
+/*------------------------------------------------------------------------------------------
+CORE v3.5 - UI Button Partial
+DATE - May 21, 2012
+AUTHOR - Doug Fraize & Matthew Holmes
+------------------------------------------------------------------------------------------ */
+
+/*=== CORE BUTTON SETUP ===================================================================*/
+
+//=== SASS VARS =============================================================================
+
+//--- SIZE VARS -----------------------------------------------------------------------------
+$context-size:15; // 15px
+
+//--- SIZE FUNCTION -------------------------------------------------------------------------
+
+// $target-size = size you want in pixels
+// $context-size = base size in pixels
+// $target-size/$context-size = size in ems
+
+@function size($target-size) {
+	@return $target-size/$context-size;
+}
+
+
+//--- CORE BUTTON CONTAINER ------------------------------------------------------------------
+
+.ui-btn-ctn										{
+												@include background-gradient(#efefef, #cccccd);
+												@include border-radius(.65em, all);
+												@include box-shadow(0, 1px, 1px, #ccc);
+												border:1px solid #B4B4B4;
+												transition:box-shadow 0.15s ease-in-out 0s;
+												-moz-transition:-moz-box-shadow 0.15s ease-in-out 0s;
+												-webkit-transition:-webkit-box-shadow 0.15s ease-in-out 0s;
+												-o-transition:-o-box-shadow 0.15s ease-in-out 0s;
+												text-shadow:1px 1px 1px #FFF;
+												color:#333;
+												font-weight:bold; 
+												line-height:#{size($context-size)}em;
+												text-align:center;
+												white-space:nowrap;
+												padding:#{size(6.5)}em #{size(9.75)}em;
+												position:relative;
+												display:block;
+												}
+
+
+//--- GLOBAL CORE BUTTON ----------------------------------------------------------------------
+
+.ui-btn											{
+												background-color:transparent;
+												border-width:0;
+												@include arial-font-stack;
+												margin:0;
+												padding:0;
+												font-size:#{size($context-size)}em;
+												display:inline-block;
+												overflow:visible; /* Removes horz. padding of button tag in IE7 */
+												cursor:pointer;
+												text-decoration:none;
+
+	// CORE BUTTON SIZE OPTIONS
+	
+	.x-small										{
+													@extend .ui-btn-ctn;
+													font-size:#{size(10)}em;
+													min-width:2.564em;
+													font-weight:normal;
+													}
+	.small											{
+													@extend .ui-btn-ctn;
+													font-size:#{size(12)}em;
+													min-width:4.2735em;
+													}
+	.medium											{
+													@extend .ui-btn-ctn;
+													font-size:#{size(14)}em;
+													min-width:5.25em;
+													}
+	.large											{
+													@extend .ui-btn-ctn;
+													@include myriad-font-stack;
+													font-size:#{size(18)}em;
+													min-width:5.5em;
+													font-weight:700;
+													}
+	.x-large										{
+													@extend .large;
+													font-size:#{size(22)}em;
+													min-width:5.66em;
+													}
+	.xx-large										{
+													@extend .large;
+													font-size:#{size(26)}em;
+													min-width:5.77em;
+													}
+	.xxx-large										{
+													@extend .large;
+													font-size:#{size(33)}em;
+													min-width:5.4em;
+													}
+	
+	// CORE BUTTON LINK STATES
+	
+	&:link,
+	&:visited										{
+													color:#333;
+													text-decoration:none;
+													}
+													
+	&:hover .ui-btn-ctn								{
+													@include background-gradient(#efefef, #bbbaba);
+													border:1px solid #999;
+													color:#000;
+													}
+													
+	&:active .ui-btn-ctn							{
+													@include background-gradient(#bbbaba, #efefef);
+													@include box-shadow(0, 0, 0, transparent);
+													transition:translate(0, 0);
+													-moz-transition:translate(0, 0);
+													-webkit-transition:translate(0, 0);
+													-o-transition:translate(0, 0);
+													text-shadow:-1px -1px 1px #FFF;
+													}
+
+	// CORE BUTTON COLOR OPTIONS
+	
+	// Orange gradient button
+	.orange,
+	&:link .orange,
+	&:visited .orange								{
+													@include background-gradient(#ffae00,#e17f00);
+													color:#fff;
+													text-shadow:1px 1px 1px #666;
+													}
+													
+	&:hover .orange									{
+													@include background-gradient(#ffae00,#cf7500);
+													color:#fff;
+													}
+													
+	&:active .orange								{
+													@include background-gradient(#cf7500,#ffae00);
+													text-shadow:-1px -1px 1px #666;
+													}
+
+	// Green gradient button
+	.green,
+	&:link .green,
+	&:visited .green								{
+													@include background-gradient(#a0de22,#86b32d);
+													color:#fff;
+													text-shadow:1px 1px 1px #666;
+													}
+													
+	&:hover .green									{
+													@include background-gradient(#a0de22,#7ea630);
+													color:#fff;
+													}
+													
+	&:active .green									{
+													@include background-gradient(#7ea630,#a0de22);
+													text-shadow:-1px -1px 1px #666;	
+													}
+
+	// blue gradient button
+	.blue,
+	&:link .blue,
+	&:visited .blue									{
+													@include background-gradient(#00a8ff,#0082c3);
+													color:#fff;
+													text-shadow:1px 1px 1px #666;
+													}
+													
+	&:hover .blue									{
+													@include background-gradient(#00a8ff,#0374ac);
+													color:#fff;
+													}
+													
+	&:active .blue									{
+													@include background-gradient(#0374ac,#00a8ff);
+													text-shadow:-1px -1px 1px #666;
+													}
+													
+	// CORE BUTTON ICON OPTIONS
+	.ui-btn-icn-left,
+	.ui-btn-icn-right								{display:inline-block;}
+	.ui-btn-icn-left								{margin-right:#{size(5.2)}em}
+	.ui-btn-icn-right								{margin-left:#{size(5.2)}em;}
+	.ui-btn-icn-top,
+	.ui-btn-icn-bottom								{display:block;}
+	.ui-btn-icn-top									{margin:0 auto #{size(3)}em auto;}
+	.ui-btn-icn-bottom								{margin:#{size(3)}em auto 0 auto;}
+												}
+												
+//--- BUTTON GROUP ------------------------------------------------------------------
+
+.ui-btn-grp-vert								{
+	.ui-btn											{
+													display:block;
+		.ui-btn-ctn	 									{
+														@include border-radius(0, all);
+														border-top:0;
+														}
+													}
+	.ui-btn:first-child								{
+		.ui-btn-ctn	 									{
+														@include border-radius(.65em .65em 0 0, all);
+														border-top:1px solid #B4B4B4;
+														}
+													}
+	.ui-btn:last-child								{
+		.ui-btn-ctn	 									{
+														@include border-radius(0 0 .65em .65em, all);
+														}
+													}
+												}
+.ui-btn-grp-horz								{
+												@include clearfix;
+	.ui-btn											{
+													float:left;
+		.ui-btn-ctn	 									{
+														@include border-radius(0, all);
+														border-top:1px solid #B4B4B4;
+														border-bottom:1px solid #B4B4B4;
+														border-left:0;
+														border-right:1px solid #B4B4B4;
+														}
+													}
+	.ui-btn:first-child								{
+		.ui-btn-ctn	 									{
+														@include border-radius(.65em 0 0 .65em, all);
+														border-left:1px solid #B4B4B4;
+														}
+													}
+	.ui-btn:last-child								{
+		.ui-btn-ctn	 									{
+														@include border-radius(0 .65em .65em 0, all);
+														}
+													}
+												}

@@ -1,0 +1,69 @@
+/*------------------------------------------------------------------------------------------
+UI Dialog CSS
+DATE - May 21, 2012
+AUTHOR - Doug Fraize & Matthew Holmes
+------------------------------------------------------------------------------------------ */
+
+//=== SASS VARS =============================================================================
+
+//--- SIZE VARS -----------------------------------------------------------------------------
+$context-size:15; // 15px
+
+//--- SIZE FUNCTION -------------------------------------------------------------------------
+
+// $target-size = size you want in pixels
+// $context-size = base size in pixels
+// $target-size/$context-size = size in ems
+
+@function size($target-size) {
+	@return $target-size/$context-size;
+}
+
+/*--- DEFAULT STYLES FOR JQUI DIALOG DISPLAY ------------------------------------------------*/
+.ui-dialog-ctn					{
+								display:none;
+								}
+
+.ui-widget-overlay				{
+								background-color:#000;
+								position:absolute;
+								top:0;
+								opacity:0.4;
+								filter:alpha(opacity=40);
+								}
+
+.ui-dialog						{
+								@include box-shadow(1px, 1px, 1px, #666);
+								@include border-radius(#{size(6)}em, all);
+								position:absolute;
+								border:0;
+	.ui-dialog-titlebar				{
+									@include border-radius(#{size(6)}em #{size(6)}em 0 0, all);
+									background-color:#EFEFEF;
+									border-bottom:1px solid #CCC;
+									cursor:auto;
+									padding:#{size(15)}em #{size(15)}em #{size(10)}em #{size(15)}em;
+									position:relative;
+		.ui-dialog-title				{
+										@include myriad-font-stack;
+										font-size:#{size(23)}em;
+										font-weight:bold;
+										color:#000;
+										}
+		.ui-dialog-titlebar-close		{
+										position:absolute;
+										top:#{size(24)}em;
+										right:#{size(20)}em;
+										text-transform:capitalize;
+										font-size:#{size(12)}em;
+										}
+									}
+	.ui-dialog-content				{
+									@include clearfix;
+									@include border-radius(0 0 #{size(6)}em #{size(6)}em, all);
+									padding:#{size(15)}em #{size(15)}em #{size(20)}em #{size(15)}em;
+									background-color:#EFEFEF;
+									line-height:#{size(18.2)}em;
+									border-top:1px solid #FFF;
+									}
+								}

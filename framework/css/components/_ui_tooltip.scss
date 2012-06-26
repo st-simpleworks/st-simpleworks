@@ -1,0 +1,180 @@
+/*------------------------------------------------------------------------------------------
+UI Tooltip CSS
+DATE - May 21, 2012
+AUTHOR - Doug Fraize & Matthew Holmes
+------------------------------------------------------------------------------------------ */
+
+//=== SASS VARS =============================================================================
+
+//--- SIZE VARS -----------------------------------------------------------------------------
+$context-size:15; // 15px
+
+//--- SIZE FUNCTION -------------------------------------------------------------------------
+
+// $target-size = size you want in pixels
+// $context-size = base size in pixels
+// $target-size/$context-size = size in ems
+
+@function size($target-size) {
+	@return $target-size/$context-size;
+}
+
+.ui-tooltip										{
+												cursor:help !important;
+												}
+.ui-tooltip-ctn									{
+												display:none;
+												background-color:#efefef;
+												border:1px solid #b2b2b2;
+												@include border-radius(#{size(6)}em, all);
+												min-height:#{size(60)}em;
+												max-width:#{size(300)}em;
+												font-weight:normal;
+												padding:#{size(12)}em #{size(10)}em #{size(11)}em #{size(10)}em;
+												position:absolute;
+												z-index:9998;
+	.ui-tooltip-titlebar							{
+													margin:0 0 #{size(7)}em 0;
+													padding:0;
+													position:relative;
+													font-size:#{size(11.05)}em;
+		h6												{
+														margin:0;
+														width:70%;
+														line-height:#{size(13)}em;
+														}
+		.ui-tooltip-close								{
+														position:absolute;
+														top:#{size(-3)}em;
+														right:0;
+			&:link,
+			&:visited,
+			&:hover,
+			&:active										{
+															height:inherit !important;
+															text-decoration:none;
+															color:#666;
+															}
+														}
+													}
+	.ui-tooltip-body,
+	.ui-tooltip-footer								{
+		p 												{
+														margin:0;
+														font-size:#{size(11.05)}em;
+														line-height:#{size(16.9)}em;
+														}
+													}
+	.ui-tooltip-footer								{
+		p 												{
+														margin-top:#{size(5)}em;
+														}
+													}
+	.ui-tooltip-arw-ctn,
+	.ui-tooltip-arw-ctn-inner 						{
+													background:none;
+													border-bottom-width:0;
+													border-style:solid;
+													width:0;
+													height:0;
+													position:absolute;
+													}
+													
+	/* Tooltip arrow color customization */
+	.ui-tooltip-arw-ctn								{
+													border-color:#b2b2b2;
+		.ui-tooltip-arw-ctn-inner 						{
+														border-color:#efefef;
+														}
+													}
+												}
+
+	/* Tooltip arrow positioning (horz center or vertical middle by default) */
+	.ui-tooltip-ctn-top,
+	.ui-tooltip-ctn-btm
+												{
+		.ui-tooltip-arw-ctn							{
+													left:50%;
+													right:auto;
+													margin-left:#{size(-20)}em;
+													}
+												}
+												
+	.ui-tooltip-ctn-left,
+	.ui-tooltip-ctn-right						{
+		.ui-tooltip-arw-ctn							{
+													top:24.5%;
+													}
+												}
+
+/* Arrow top placement */
+.ui-tooltip-ctn-top								{
+	.ui-tooltip-arw-ctn								{
+													border-top-width:#{size(20)}em;
+													border-right:#{size(20)}em solid transparent;
+													border-left:#{size(20)}em solid transparent;
+													bottom:#{size(-20)}em;
+		.ui-tooltip-arw-ctn-inner 						{
+														border-top-width:#{size(19)}em;
+														border-right:#{size(19)}em solid transparent;
+														border-left:#{size(19)}em solid transparent;
+														left:#{size(-19)}em;
+														top:#{size(-20)}em;
+														bottom:auto;
+														}
+													}
+												}
+
+/* Arrow bottom placement */
+.ui-tooltip-ctn-btm								{
+	.ui-tooltip-arw-ctn								{
+													border-bottom-width:#{size(20)}em;
+													border-right:#{size(20)}em solid transparent;
+													border-left:#{size(20)}em solid transparent;
+													top:#{size(-20)}em;
+		.ui-tooltip-arw-ctn-inner						{
+														border-bottom-width:#{size(19)}em;
+														border-right:#{size(19)}em solid transparent;
+														border-left:#{size(19)}em solid transparent;
+														left:#{size(-19)}em;
+														top:1px;
+														bottom:auto;
+														}
+													}
+												}
+
+/* Arrow left placement */
+.ui-tooltip-ctn-left							{
+	.ui-tooltip-arw-ctn								{
+													border-right-width:#{size(20)}em;
+													border-top:#{size(20)}em solid transparent;
+													border-bottom:#{size(20)}em solid transparent;
+													left:#{size(-20)}em;
+		.ui-tooltip-arw-ctn-inner						{
+														border-right-width:#{size(19)}em;
+														border-top:#{size(19)}em solid transparent;
+														border-bottom:#{size(19)}em solid transparent;
+														left:1px;
+														top:#{size(-19)}em;
+														bottom:auto;
+														}
+													}
+												}
+
+/* Arrow right placement */
+.ui-tooltip-ctn-right							{
+	.ui-tooltip-arw-ctn								{
+													border-left-width:#{size(20)}em;
+													border-top:#{size(20)}em solid transparent;
+													border-bottom:#{size(20)}em solid transparent;
+													right:#{size(-20)}em;
+		.ui-tooltip-arw-ctn-inner						{
+														border-left-width:#{size(19)}em;
+														border-top:#{size(19)}em solid transparent;
+														border-bottom:#{size(19)}em solid transparent;
+														right:1px;
+														top:#{size(-19)}em;
+														bottom:auto;
+														}
+													}
+												}

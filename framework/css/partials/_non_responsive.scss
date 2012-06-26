@@ -1,0 +1,204 @@
+/*------------------------------------------------------------------------------------------
+CORE v3.5 - Non-responsive Design Partial
+DATE - May 21, 2012
+AUTHOR - Doug Fraize & Matthew Holmes
+------------------------------------------------------------------------------------------ */
+
+//=== SASS VARS =============================================================================
+
+//--- SIZE VARS -----------------------------------------------------------------------------
+$context-size:15; // 15px
+
+//--- SIZE FUNCTION -------------------------------------------------------------------------
+
+// $target-size = size you want in pixels
+// $context-size = base size in pixels
+// $target-size/$context-size = size in ems
+
+@function size($target-size) {
+	@return $target-size/$context-size;
+}
+
+//--- GRID VARS -----------------------------------------------------------------------------
+$grid-col-width:4.25%; // 40px
+$grid-col-gutter-width:2.04%; // 20px
+
+$grid-col-width-reset:4.166%; // 40px
+
+//--- GRID COLUMN WIDTH FUNCTION ------------------------------------------------------------
+@function col-width($n) {
+	@return $n * $grid-col-width - $grid-col-gutter-width;
+}
+
+@function col-width-reset($n) {
+	@return $n * $grid-col-width-reset;
+}
+
+//=== MEDIA QUERIES =========================================================================
+
+/*--- Portrait iPhone, landscape iPhone, portrait smart phones -----------------------------*/
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+			
+	/*=== _TYPE.SCSS =======================================================================*/
+	// Remember to change the font-size on the body tag to correspond to the context, for example:
+	// if the context size is 10 (10px) you need to change the body font-size to .625em or 62.5%.
+	// 62.5% on the body is 62.5% of 16px which is the base font size for most browsers,
+	// giving you a base of 10px
+	
+	body											{
+													font-size:.9375em; // 15px
+													}
+			
+	/*=== _GRID.SCSS ========================================================================*/
+
+	/*--- PAGE SETUP ------------------------------------------------------------------------*/
+	.page-adjust
+													{
+													width:980px;
+													}
+
+	/*--- GRID GLOBAL ATTRIBUTES  -----------------------------------------------------------*/
+	.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+	.col-7, .col-8, .col-9, .col-10, .col-11, 
+	.col-12, .col-13, .col-14, .col-15, .col-16, 
+	.col-17, .col-18, .col-19, .col-20, .col-21, 
+	.col-22, .col-23, .col-24						{
+													clear:none;
+													float:left;
+													}
+													
+	.grid-nomargin									{
+		.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8,
+		.col-9, .col-10, .col-11, .col-12, .col-13, .col-14, .col-15, .col-16,
+		.col-17, .col-18, .col-19, .col-20, .col-21, .col-22, .col-23, .col-24
+														{
+														clear:none;
+														float:left;
+														}
+													}
+
+	/*--- GRID PRESETS  --------------------------------------------------------------------*/
+	.col-1											{width:col-width(1);}
+	.col-2											{width:col-width(2);}
+	.col-3											{width:col-width(3);}
+	.col-4											{width:col-width(4);}
+	.col-5											{width:col-width(5);}
+	.col-6											{width:col-width(6);}
+	.col-7											{width:col-width(7);}
+	.col-8											{width:col-width(8);}
+	.col-9											{width:col-width(9);}
+	.col-10											{width:col-width(10);}
+	.col-11											{width:col-width(11);}
+	.col-12											{width:col-width(12);}
+	.col-13											{width:col-width(13);}
+	.col-14											{width:col-width(14);}
+	.col-15											{width:col-width(15);}
+	.col-16											{width:col-width(16);}
+	.col-17											{width:col-width(17);}
+	.col-18											{width:col-width(18);}
+	.col-19											{width:col-width(19);}
+	.col-20											{width:col-width(20);}
+	.col-21											{width:col-width(21);}
+	.col-22											{width:col-width(22);}
+	.col-23											{width:col-width(23);}
+	.col-24											{width:col-width(24);}
+
+	/*--- GRID PRESETS  --------------------------------------------------------------------*/
+	.grid-nomargin									{
+		.col-1											{width:col-width-reset(1);}
+		.col-2											{width:col-width-reset(2);}
+		.col-3											{width:col-width-reset(3);}
+		.col-4											{width:col-width-reset(4);}
+		.col-5											{width:col-width-reset(5);}
+		.col-6											{width:col-width-reset(6);}
+		.col-7											{width:col-width-reset(7);}
+		.col-8											{width:col-width-reset(8);}
+		.col-9											{width:col-width-reset(9);}
+		.col-10											{width:col-width-reset(10);}
+		.col-11											{width:col-width-reset(11);}
+		.col-12											{width:col-width-reset(12);}
+		.col-13											{width:col-width-reset(13);}
+		.col-14											{width:col-width-reset(14);}
+		.col-15											{width:col-width-reset(15);}
+		.col-16											{width:col-width-reset(16);}
+		.col-17											{width:col-width-reset(17);}
+		.col-18											{width:col-width-reset(18);}
+		.col-19											{width:col-width-reset(19);}
+		.col-20											{width:col-width-reset(20);}
+		.col-21											{width:col-width-reset(21);}
+		.col-22											{width:col-width-reset(22);}
+		.col-23											{width:col-width-reset(23);}
+		.col-24											{width:col-width-reset(24);}
+													}
+													
+	/*=== _PAGE.SCSS =======================================================================*/
+	
+	/*--- VERTICAL NAVIGATION SETUP --------------------------------------------------------*/
+	.mb-link-list-vert								{
+		dd,li											{
+														display:inline;
+														padding:0;
+														margin:0 #{size(6)}em 0 0;
+														border-bottom:0;
+			a												{
+															display:inline-block;
+															padding:0 #{size(8)}em 0 0;
+															margin:0;
+															}
+			.pipe											{
+															display:inline;
+															}
+														}
+													}
+}
+
+/*--- Portrait e-readers (Nook/Kindle/Kindle Fire) ------------------------------------------*/
+@media only screen and (min-width : 481px) and (max-width : 640px) {
+	
+	/*=== _GRID.SCSS ========================================================================*/
+
+	/*--- PAGE SETUP ------------------------------------------------------------------------*/
+	.page-adjust
+													{
+													width:980px;
+													}
+}
+
+/*--- Portrait iPad, portrait tablets -------------------------------------------------------*/
+@media only screen and (min-width : 641px) and (max-width : 768px) {
+		
+	/*=== _GRID.SCSS ========================================================================*/
+
+	/*--- PAGE SETUP ------------------------------------------------------------------------*/
+	.page-adjust
+													{
+													width:980px;
+													}
+}
+
+/*--- Low-resolution laptops and desktops ---------------------------------------------------*/
+@media only screen and (min-width : 769px) and (max-width : 980px) {
+			
+	/*=== _GRID.SCSS ========================================================================*/
+
+	/*--- PAGE SETUP ------------------------------------------------------------------------*/
+	.page-adjust
+													{
+													width:980px;
+													}
+}
+
+/*--- Landscape iPad, laptops and desktops beyond 980px -------------------------------------*/
+@media only screen and (min-width : 981px) and (max-width : 1024px) {
+
+}
+
+/*--- Big landscape tablets, laptops and desktops beyond 980px ------------------------------*/
+@media only screen and (min-width : 1025px) and (max-width : 1280px) {
+
+}
+
+/*--- Hi-res laptops and desktops -----------------------------------------------------------*/
+@media only screen and (min-width : 1281px) {
+
+}
